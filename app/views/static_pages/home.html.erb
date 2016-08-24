@@ -1,4 +1,9 @@
 <% provide(:title, 'Home') %>
-<title>Ruby on Rails Sample App | <%= yield(:title) %></title>
-<h1>Sample App</h1>
-<p>Find me in Sample App app/views/static_pages/home.html.erb</p>
+<!-- <title>Ruby on Rails Sample App | <%= yield(:title) %></title> -->
+<div class="center hero-unit">
+	<h1>Sample App</h1>
+
+	<%= link_to("Sign up now", "#" , class: "btn btn-large btn-primary") %>
+</div>
+
+<%= link_to image_tag("https://pbs.twimg.com/profile_images/691206086955790336/CDMbA57p.png", alt: "Rails"), "#" %>

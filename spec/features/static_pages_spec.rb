@@ -18,49 +18,37 @@ require 'rails_helper'
 require 'spec_helper' 
 feature "Static pages" do
 
+subject { page }
 	feature "Home page" do
-		it "should have the content 'Sample App'" do 
-			visit '/static_pages/home'
-			page.should have_content('Sample App')
-		end 
+		before { visit root_path }
 
-		it "should have the home title" do
-			visit 'static_pages/home'
-			page.should have_selector('title',
-											:text => "Ruby on Rails Sample App | Home")
-		end
-
-		it "should not have the home title" do
-			visit 'static_pages/home'
-			page.should_not have_selector('title', :text => '| home')
-		end
+		it { should have_content('Sample App') }
+		it { should have_selector('title',
+											:text => full_title('')) }
+		it { should_not have_selector('title', text: '| Home', exact: true) }
 	end
 
 	feature "Help page" do
-		it "should have the content 'help'" do
-			visit 'static_pages/help'
-			page.should have_content('Help')
-		end
+		before { visit help_path }
 
-		it "should have the help title" do
-			visit 'static_pages/help'
-			page.should have_selector('title',
-											:text => "Ruby on Rails Sample App | Help")
-		end
+		it { should have_content('Help') }
+		it { should have_selector('title',
+											:text => full_title('')) }
 	end
 
 	feature "About page" do
+		before { visit about_path}
 
-		it "should have the content 'About Us'" do
-			visit 'static_pages/about'
-			page.should have_content('About Us')
-		end
+		it { should have_content('About Us') }
+		it { should have_selector('title',
+											:text => full_title('')) }
+	end
 
-		it "should have the about title" do
-			visit 'static_pages/about'
-			page.should have_selector('title',
-											:text => "Ruby on Rails Sample App | About Us")
-		end
+	feature "contact page" do
+		before { visit contact_path }
+
+		it { should have_selector('title',
+											:text => full_title('')) }
 	end
 
 end
