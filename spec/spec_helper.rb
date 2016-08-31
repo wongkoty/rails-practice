@@ -32,6 +32,9 @@ RSpec.configure do |config|
     # ...rather than:
     #     # => "be bigger than 2"
     config.include Capybara::DSL
+    config.expect_with :rspec do |c|
+      c.syntax = [:should, :expect]
+    end
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
