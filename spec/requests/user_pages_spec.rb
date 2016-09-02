@@ -26,4 +26,7 @@ describe "User pages" do
 		it { should have_selector('title', text: full_title('Sign up')) }
 		it { should have_selector('h1', text: 'Sign up') }
 	end
+
+
+
  end

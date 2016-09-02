@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -39,11 +40,14 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'rspec-its'
 end
 
 group :test do
 	gem 'capybara'
 	gem 'factory_girl_rails'
+	gem 'cucumber-rails'
+	gem 'database_cleaner'
 end
 
 group :development do
