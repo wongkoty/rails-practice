@@ -23,8 +23,13 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
+gem 'bootstrap'
+gem 'rails-assets-tether'
 gem 'bcrypt-ruby'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 
 # Use ActiveModel has_secure_password
@@ -46,7 +51,7 @@ end
 group :test do
 	gem 'capybara'
 	gem 'factory_girl_rails'
-	gem 'cucumber-rails'
+	gem 'cucumber-rails', :require => false
 	gem 'database_cleaner'
 end
 
